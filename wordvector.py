@@ -37,6 +37,7 @@ train_x_vectors = [doc.vector for doc in docs]
 svm_wv = svm.SVC(kernel='linear')
 svm_wv.fit(train_x_vectors, train_y)
 
+joblib.dump(svm_wv,'svm_model.pkl')
 # 🔹 Test prediction on new sentence
 test_x = ["the fit is great and comfortable"]
 test_docs = list(nlp.pipe(test_x))
